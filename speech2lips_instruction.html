@@ -335,7 +335,7 @@ kbd {
 <li>Matlab</li>
 </ul>
 
-<h3 id="toc_1">Contens</h3>
+<h3 id="toc_1">Contents</h3>
 
 <h2 id="toc_2"></h2>
 
@@ -367,7 +367,7 @@ kbd {
 <h2 id="toc_4">Install Feature Extractors</h2>
 
 <ul>
-<li>Go visit this github and download it(speech2face) to your local computer.</li>
+<li>Go visit this github and download <a href="https://github.com/hyung8758/speech2face">it(speech2face)</a> to your local computer.</li>
 <li>We will use &#39;FaceTracker&#39; and &#39;OpenFace&#39; toolkit in order to retrieve 3 types of data: images, raw.pcm(audio file), and parameters.txt (pts data).</li>
 <li><p>Two toolkits are already donwloaded and manipulated for the task&#39;s sake, you don&#39;t have to visit the following github in order to download them again. </p></li>
 </ul>
@@ -384,14 +384,18 @@ kbd {
 <ul>
 <li><p>Install opencv3 and openal</p>
 
-<div><pre><code class="language-none">$ # install opencv3
+<div><pre><code class="language-bash">$ # install opencv3
 $ brew tap homebrew/science 
 $ brew install homebrew
 $ # install openal
 $ brew install openal-soft</code></pre></div></li>
 <li><p>Open Makefile and add &quot;(absolute/path)/openal-soft/1.18.0/lib/libopenal.1.dylib -lpthread&quot; to LIBRARIES variable.</p></li>
 </ul></li>
-<li><p>Navigate to &quot;speech2face/extractors/FaceTracker&quot;</p></li>
+<li><p>Navigate to &quot;speech2face/extractors/FaceTracker/src/exe&quot; and open face_tracker.cc</p></li>
+<li><p>In line 55, you will see &quot;save_dir&quot; variable. This path is where the data is saved. Fix the directory path.</p>
+
+<div><pre><code class="language-cpp">// Fix this line.
+const char *save_dir = &quot;/Users/hyungwonyang/Google_Drive/C++/FaceTracker/extracted_data/;</code></pre></div></li>
 <li><p>Type &quot;make&quot; in the terminal.</p></li>
 <li><p>Navigate to &quot;./bin&quot; and type ./face_tracker&quot;</p></li>
 </ul></li>
@@ -408,7 +412,7 @@ $ brew install openal-soft</code></pre></div></li>
 <li>Install <a href="https://www.xquartz.org/">XQuartz</a></li>
 <li><p>Install boost, TBB, and OpenCV</p>
 
-<div><pre><code class="language-none">$ brew tap homebrew/science
+<div><pre><code class="language-bash">$ brew tap homebrew/science
 $ brew install boost tbb opencv3</code></pre></div></li>
 <li><p>Navigate to &quot;speech2face/extractors/FaceTracker&quot; and open &quot;CMakeLists.txt&quot;</p></li>
 <li><p>Find &quot;find_package( OpenCV REQUIRED )&quot; and change it to &quot;find_package( OpenCV HINTS your/opencv3/path )&quot; 
@@ -425,15 +429,11 @@ MESSAGE(&quot;  X11_LIBRARY_DIRS: ${X11_LIBRARY_DIRS}&quot;)
 include_directories( ${X11_INCLUDE_DIR} )</code></pre></div></li>
 <li><p>Do build process by following commands in the terminal.</p>
 
-<div><pre><code class="language-none">$ cmake -D CMAKE_BUILD_TYPE=RELEASE .
+<div><pre><code class="language-bash">$ cmake -D CMAKE_BUILD_TYPE=RELEASE .
 $ make</code></pre></div></li>
-</ul></li>
-<li><p>Take a video with QuickTimePlayer and save it to &quot;OpenFace/data/video&quot; and run following lines.</p>
+<li><p>Take a video with QuickTimePlayer and save it to &quot;OpenFace/data/video&quot; and run following lines in matlab. Extract images and audio signals from video file and save them to &quot;OpenFace/data/inputs&quot;.</p>
 
-<ul>
-<li><p>Extract images and audio signals from video file in matlab and save them to &quot;OpenFace/data/inputs&quot;.</p>
-
-<div><pre><code class="language-none">&gt;&gt; % matlab
+<div><pre><code class="language-matlab">&gt;&gt; % matlab
 &gt;&gt; % Switch fileName as a audio file name.
 &gt;&gt; video_file = &#39;./Openface/data/video/fileName&#39;;
 &gt;&gt; v = VideoReader(video_file);
@@ -449,7 +449,7 @@ $ make</code></pre></div></li>
 &gt;&gt; end      </code></pre></div></li>
 <li><p>Run the following code in terminal, then you will get pts information.</p>
 
-<div><pre><code class="language-none">$ # ./inputs(모든 이미지 담긴 폴더) / ./outputs(pts 담기는 폴더)
+<div><pre><code class="language-bash">$ # ./inputs(모든 이미지 담긴 폴더) / ./outputs(pts 담기는 폴더)
 $ bin/FaceLandmarkImg -fdir ./inputs -ofdir ./outputs</code></pre></div></li>
 </ul></li>
 </ul></li>
@@ -460,7 +460,7 @@ $ bin/FaceLandmarkImg -fdir ./inputs -ofdir ./outputs</code></pre></div></li>
 <h2 id="toc_5">Speech2face Tutorial</h2>
 
 <ul>
-<li>If you download &quot;speech2face&quot; from [the github] and finished the installation procedure, then run tutorial.m code block by block.</li>
+<li>If you download &quot;speech2face&quot; from <a href="https://github.com/hyung8758/speech2face">the github</a> and finished the installation procedure, then run tutorial.m code block by block.</li>
 </ul>
 
 <p><center> <img src="https://1.bp.blogspot.com/-lUI4EmPUn4o/WUoSmad1hPI/AAAAAAAAErM/NnMekzeNz6kvwFv_OlM5p9lifFTLdcROACLcBGAs/s300/faceanimation_demo_clear.gif" alt="enter image description here"></center>
