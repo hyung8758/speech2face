@@ -328,7 +328,7 @@ kbd {
 
 <body>
 
-<h2 id="toc_0">Speech2face Instruction.</h2>
+<h2 id="toc_0">Speech2face Instruction</h2>
 
 <ul>
 <li>Mac OSX(Sierra)</li>
@@ -401,6 +401,10 @@ const char *save_dir = &quot;/Users/hyungwonyang/Google_Drive/C++/FaceTracker/ex
 
 <ul>
 <li>After finishing all the procedures above, type &quot;make&quot; in the terminal.</li>
+</ul></li>
+<li><p>Running a tool</p>
+
+<ul>
 <li>Navigate to &quot;./bin&quot; and type ./face_tracker&quot;</li>
 </ul></li>
 </ul>
@@ -411,9 +415,7 @@ const char *save_dir = &quot;/Users/hyungwonyang/Google_Drive/C++/FaceTracker/ex
 <ul>
 <li><p>OpenFace is an open source facial behavior analysis toolkit. <a href="https://github.com/TadasBaltrusaitis/OpenFace/wiki">more information</a>
 <center> <img src="https://4.bp.blogspot.com/--FGM2TQQF70/WUoSiBY40OI/AAAAAAAAErI/SQwxho41nAMgb0U-_5tk_iG5inQbHdo_gCLcBGAs/s300/openface_demo_clear.gif" alt="enter image description here"></center>
-<center> Video recording with OpenFace </center>    </p>
-
-<ul>
+<center> Video recording with OpenFace </center>    </p></li>
 <li><p>Installation</p>
 
 <ul>
@@ -440,6 +442,10 @@ include_directories( ${X11_INCLUDE_DIR} )</code></pre></div></li>
 
 <div><pre><code class="language-bash">$ cmake -D CMAKE_BUILD_TYPE=RELEASE .
 $ make</code></pre></div></li>
+</ul></li>
+<li><p>Data Process</p>
+
+<ul>
 <li><p>Take a video with QuickTimePlayer and save it to &quot;OpenFace/data/video&quot; and run following lines in matlab. Extract images and audio signals from video file and save them to &quot;OpenFace/data/inputs&quot;.</p>
 
 <div><pre><code class="language-matlab">&gt;&gt; % matlab
@@ -458,9 +464,10 @@ $ make</code></pre></div></li>
 &gt;&gt; end      </code></pre></div></li>
 <li><p>Run the following code in terminal, then you will get pts information.</p>
 
-<div><pre><code class="language-bash">$ # ./inputs(모든 이미지 담긴 폴더) / ./outputs(pts 담기는 폴더)
-$ bin/FaceLandmarkImg -fdir ./inputs -ofdir ./outputs</code></pre></div></li>
-</ul></li>
+<div><pre><code class="language-none">```bash
+$ # ./inputs(모든 이미지 담긴 폴더) / ./outputs(pts 담기는 폴더)
+$ bin/FaceLandmarkImg -fdir ./inputs -ofdir ./outputs
+```</code></pre></div></li>
 </ul></li>
 </ul>
 
