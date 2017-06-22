@@ -4,7 +4,7 @@
 * Hyungwon Yang
 * hyung8758@gmail.com
 
-## OS and Langauge
+## OS and Language
 * **Mac OSX(Sierra)** 
 * **Matlab**
 
