@@ -26,7 +26,7 @@ data = sample_data.sample_data;
 %% Check the face indices.
 % 1st argv: data structure (it can be obtained by running data4train.m)
 % 2nd argv: indexing speed.
-showFaceIndex(data,0.5)
+showFaceIndex(data,0.1)
 
 %% Check the raw data.
 % faceAnimation needs face_data variable on your workspace.

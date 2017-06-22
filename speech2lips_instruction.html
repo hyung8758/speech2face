@@ -340,14 +340,13 @@ kbd {
 <h2 id="toc_2"></h2>
 
 <ol>
-<li><a href="#intro">Speech2face Introduction</a></li>
-<li><a href="#install">Install Feature Extractors</a>
+<li><p><a href="#intro">Speech2face Introduction</a></p></li>
+<li><p><a href="#install">Install Feature Extractors</a></p>
 
-<ul>
-<li>FaceTracker</li>
-<li>OpenFace</li>
-</ul></li>
-<li><a href="#tuto">Speech2lips Tutorial</a></li>
+<p>2-1 <a href="#facetracker">FaceTracker</a></p>
+
+<p>2-2 <a href="#openface">OpenFace</a></p></li>
+<li><p><a href="#tuto">Speech2lips Tutorial</a></p></li>
 </ol>
 
 <p><a name="intro"></a></p>
@@ -369,11 +368,11 @@ kbd {
 <ul>
 <li>Go visit this github and download <a href="https://github.com/hyung8758/speech2face">it(speech2face)</a> to your local computer.</li>
 <li>We will use &#39;FaceTracker&#39; and &#39;OpenFace&#39; toolkit in order to retrieve 3 types of data: images, raw.pcm(audio file), and parameters.txt (pts data).</li>
-<li><p>Two toolkits are already donwloaded and manipulated for the task&#39;s sake, you don&#39;t have to visit the following github in order to download them again. </p></li>
+<li>Two toolkits are already donwloaded and manipulated for the task&#39;s sake, you don&#39;t have to visit the following github in order to download them again. </li>
 </ul>
 
-<ol>
-<li><p><a href="https://github.com/kylemcdonald/FaceTracker"><strong>FaceTracker</strong></a></p>
+<p><a name="facetracker"></a>
+1. <a href="https://github.com/kylemcdonald/FaceTracker"><strong>FaceTracker</strong></a></p>
 
 <ul>
 <li><p>FaceTracker is a library for deformable face tracking.
@@ -382,29 +381,39 @@ kbd {
 <li><p>Installation</p>
 
 <ul>
-<li><p>Install opencv3 and openal</p>
+<li><p>Install opencv3 and openal.</p>
 
 <div><pre><code class="language-bash">$ # install opencv3
 $ brew tap homebrew/science 
 $ brew install homebrew
 $ # install openal
 $ brew install openal-soft</code></pre></div></li>
-<li><p>Open Makefile and add &quot;(absolute/path)/openal-soft/1.18.0/lib/libopenal.1.dylib -lpthread&quot; to LIBRARIES variable.</p></li>
-</ul></li>
+<li><p>Open Makefile and add &quot;(absolute/path)/openal-soft/1.18.0/lib/libopenal.1.dylib -lpthread&quot; to LIBRARIES(line:14) variable.</p></li>
 <li><p>Navigate to &quot;speech2face/extractors/FaceTracker/src/exe&quot; and open face_tracker.cc</p></li>
 <li><p>In line 55, you will see &quot;save_dir&quot; variable. This path is where the data is saved. Fix the directory path.</p>
 
 <div><pre><code class="language-cpp">// Fix this line.
 const char *save_dir = &quot;/Users/hyungwonyang/Google_Drive/C++/FaceTracker/extracted_data/;</code></pre></div></li>
-<li><p>Type &quot;make&quot; in the terminal.</p></li>
-<li><p>Navigate to &quot;./bin&quot; and type ./face_tracker&quot;</p></li>
+<li><p>I recommend you to change the path as follows. just simply fix this part: &quot;path/from/Users/to&quot;.</p>
+
+<div><pre><code class="language-none">const char *save_dir = &quot;path/from/Users/to/speech2face/extractors/FaceTracker/extracted_data&quot;           ```</code></pre></div></li>
+</ul>
+
+<ul>
+<li>After finishing all the procedures above, type &quot;make&quot; in the terminal.</li>
+<li>Navigate to &quot;./bin&quot; and type ./face_tracker&quot;</li>
 </ul></li>
-<li><p><a href="https://github.com/TadasBaltrusaitis/OpenFace/wiki/Mac-Installation" title="Title"><strong>OpenFace</strong></a></p>
+</ul>
+
+<p><a name="openface"></a>
+2. <a href="https://github.com/TadasBaltrusaitis/OpenFace/wiki/Mac-Installation" title="Title"><strong>OpenFace</strong></a></p>
 
 <ul>
 <li><p>OpenFace is an open source facial behavior analysis toolkit. <a href="https://github.com/TadasBaltrusaitis/OpenFace/wiki">more information</a>
 <center> <img src="https://4.bp.blogspot.com/--FGM2TQQF70/WUoSiBY40OI/AAAAAAAAErI/SQwxho41nAMgb0U-_5tk_iG5inQbHdo_gCLcBGAs/s300/openface_demo_clear.gif" alt="enter image description here"></center>
-<center> Video recording with OpenFace </center>    </p></li>
+<center> Video recording with OpenFace </center>    </p>
+
+<ul>
 <li><p>Installation</p>
 
 <ul>
@@ -453,7 +462,7 @@ $ make</code></pre></div></li>
 $ bin/FaceLandmarkImg -fdir ./inputs -ofdir ./outputs</code></pre></div></li>
 </ul></li>
 </ul></li>
-</ol>
+</ul>
 
 <p><a name="tuto"></a></p>
 
@@ -472,6 +481,7 @@ $ bin/FaceLandmarkImg -fdir ./inputs -ofdir ./outputs</code></pre></div></li>
 <li>06.21.17</li>
 <li>Hyungwon Yang (NAMZ &amp; EMCS Labs) </li>
 <li>hyung8758@gmail.com</li>
+<li>I was mainly developed matlab codes for speech2face and borrowed two other toolkits(FaceTracker, and OpenFace)</li>
 </ul>
 
 
